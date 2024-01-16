@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaCy Model Result</title>
+</head>
+<body>
+    <h2>Input Text:</h2>
+    <p>{{ text }}</p>
+
+    <h2>Named Entities:</h2>
+    <ul>
+        {% for entity in entities %}
+            <li>{{ entity.text }} ({{ entity.label }})</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Dependency Tree:</h2>
+    {{ html_dep | safe }}
+</body>
+</html>
